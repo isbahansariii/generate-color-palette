@@ -14,21 +14,23 @@ let unlock2 = true;
 let unlock3 = true;
 
 function generateColorCode() {
-  
   // 0xfffff = hexadecimal code
   // xing by 100000 for expanding its range
   // toString(16) is used to convert into hexadecimal string
-  if (lock1 === false)
-    randomColor1 = (Math.random() * 0xfffff * 100000).toString(16);
-  if (lock2 === false)
-    randomColor2 = (Math.random() * 0xfffff * 100000).toString(16);
-  if (lock3 === false)
-    randomColor3 = (Math.random() * 0xfffff * 100000).toString(16);
-
   // slice is used for 1st 6 hexa decimal value
-  color1 = "#" + randomColor1.slice(0, 6);
-  color2 = "#" + randomColor2.slice(0, 6);
-  color3 = "#" + randomColor3.slice(0, 6);
+
+  if (lock1 === false) {
+    randomColor1 = (Math.random() * 0xfffff * 100000).toString(16);
+    color1 = "#" + randomColor1.slice(0, 6);
+  }
+  if (lock2 === false) {
+    randomColor2 = (Math.random() * 0xfffff * 100000).toString(16);
+    color2 = "#" + randomColor2.slice(0, 6);
+  }
+  if (lock3 === false) {
+    randomColor3 = (Math.random() * 0xfffff * 100000).toString(16);
+    color3 = "#" + randomColor3.slice(0, 6);
+  }
 
   document.querySelector(".color1").style.backgroundColor = color1;
   document.querySelector(".color2").style.backgroundColor = color2;
